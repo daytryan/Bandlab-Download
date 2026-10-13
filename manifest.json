@@ -1,0 +1,23 @@
+{
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "js": [ "content_bandlab.js" ],
+      "matches": [ "https://www.bandlab.com/*" ],
+      "run_at": "document_start"
+    }
+  ],
+  "description": "Download tracks/m4a/video from BandLab",
+  "manifest_version": 3,
+  "name": "BandLab Downloader",
+  "permissions": [ "storage" ],
+  "version": "2.1.0",
+  "web_accessible_resources": [
+    {
+      "matches": [ "*://*/*" ],
+      "resources": [ "js/bandlab_inject.js" ]
+    }
+  ]
+}
